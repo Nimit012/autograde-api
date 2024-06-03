@@ -16,8 +16,11 @@ const port = 3005;
 
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send('Server is running and ready to process requests.');
+});
 
-app.post('/autoGrade', async (req, res) => {
+app.post('/', async (req, res) => {
     const { audioBlobUrl, topic } = req.body;
     
 
