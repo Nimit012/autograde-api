@@ -32,10 +32,7 @@ app.post('/autoGrade', async (req, res) => {
     const response = await axios.get(audioBlobUrl, { responseType: 'arraybuffer' });
     const audioBuffer = Buffer.from(response.data);
     const audioFilePath = path.join(__dirname, 'resources', 'temp_audio.wav');
-
-
-    const audioFile = "./resources/Lauren_audio.wav";
-
+    // const audioFile = "./resources/Lauren_audio.wav";
 
     fs.writeFileSync(audioFilePath, audioBuffer);
 
